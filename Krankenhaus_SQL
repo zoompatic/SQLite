@@ -7,21 +7,6 @@ CREATE TABLE patienten (
 "Geschlecht" char NOT NULL, 
 "Adresse" varchar(100) NOT NULL,
 "Telefon" varchar[],
-"Krankenkasse" varchar(30),
-
-)
--- Ergebnis: near ")": syntax error
--- FÜHRE ALLES IN 'SQL 1*' AUS
---
--- In Zeile 1:
-CREATE TABLE patienten (
-"PatientenIN" INT PRIMARY KEY NOT NULL,
-"Vorname" varchar(30) NOT NULL, 
-"Nachname" varchar(30) NOT NULL, 
-"Geburtstag" date NOT NULL, 
-"Geschlecht" char NOT NULL, 
-"Adresse" varchar(100) NOT NULL,
-"Telefon" varchar[],
 "Krankenkasse" varchar(30)
 
 );

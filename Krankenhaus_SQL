@@ -1,0 +1,505 @@
+♦-- FÜHRE ALLES IN 'SQL 13*' AUS
+--
+-- In Zeile 1:
+CREATE TABLE Zeitschriften (
+    "Titel" VARCHAR(40) NOT NULL,
+    "ISBN" CHAR(16) NOT NULL,
+    "Verlag" VARCHAR(25) NOT NULL,
+    "Preis" NUMERIC(3,2) NOT NULL,
+    "Erscheinungsdatum" DATE,
+    PRIMARY KEY ("ISBN")
+);
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 20 ms 
+-- In Zeile 10:
+-- Einfügen von Zeitschriften-Daten
+INSERT INTO Zeitschriften (Titel, ISBN, Verlag, Preis, Erscheinungsdatum) VALUES ('Katzenjammer', '978-3-16-148410-0', 'Verlag A', 5.99, '2023-04-01');
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 0 ms 
+-- In Zeile 12:
+INSERT INTO Zeitschriften (Titel, ISBN, Verlag, Preis, Erscheinungsdatum) VALUES ('Bauerntricks', '978-3-16-148411-7', 'Verlag B', 6.99, '2023-05-15');
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 0 ms , 1 Zeilen betroffen
+-- In Zeile 13:
+INSERT INTO Zeitschriften (Titel, ISBN, Verlag, Preis, Erscheinungsdatum) VALUES ('Schlagzeilen', '978-3-16-148412-4', 'Verlag C', 4.99, '2023-06-10');
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 0 ms , 1 Zeilen betroffen
+-- In Zeile 14:
+INSERT INTO Zeitschriften (Titel, ISBN, Verlag, Preis, Erscheinungsdatum) VALUES ('Wortspiele', '978-3-16-148413-1', 'Verlag D', 7.99, '2023-07-20');
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 0 ms , 1 Zeilen betroffen
+-- In Zeile 15:
+INSERT INTO Zeitschriften (Titel, ISBN, Verlag, Preis, Erscheinungsdatum) VALUES ('Kochlöffel', '978-3-16-148414-8', 'Verlag E', 8.99, '2023-08-05');
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 0 ms , 1 Zeilen betroffen
+-- In Zeile 16:
+INSERT INTO Zeitschriften (Titel, ISBN, Verlag, Preis, Erscheinungsdatum) VALUES ('Gartenlaube', '978-3-16-148415-5', 'Verlag F', 9.99, '2023-09-12');
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 0 ms , 1 Zeilen betroffen
+-- In Zeile 17:
+INSERT INTO Zeitschriften (Titel, ISBN, Verlag, Preis, Erscheinungsdatum) VALUES ('Schminkkasten', '978-3-16-148416-2', 'Verlag G', 5.49, '2023-10-25');
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 0 ms , 1 Zeilen betroffen
+-- In Zeile 18:
+INSERT INTO Zeitschriften (Titel, ISBN, Verlag, Preis, Erscheinungsdatum) VALUES ('Witzblatt', '978-3-16-148417-9', 'Verlag H', 6.49, '2023-11-30');
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 0 ms , 1 Zeilen betroffen
+-- In Zeile 19:
+INSERT INTO Zeitschriften (Titel, ISBN, Verlag, Preis, Erscheinungsdatum) VALUES ('Schraubenzieher', '978-3-16-148418-6', 'Verlag I', 7.49, '2023-12-15');
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 0 ms , 1 Zeilen betroffen
+-- In Zeile 20:
+INSERT INTO Zeitschriften (Titel, ISBN, Verlag, Preis, Erscheinungsdatum) VALUES ('Lachnummer', '978-3-16-148419-3', 'Verlag J', 8.49, '2024-01-01');
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 0 ms , 1 Zeilen betroffen
+-- FÜHRE ALLES IN 'SQL 14*' AUS
+--
+-- In Zeile 1:
+SELECT Titel, round(Preis/2, 2) FROM Zeitschriften
+-- Ergebnis: 10 Zeilen in 18 ms zurückgegeben
+-- FÜHRE ALLES IN 'SQL 14*' AUS
+--
+-- In Zeile 1:
+SELECT Titel, Preis FROM Zeitschriften
+-- Ergebnis: 10 Zeilen in 17 ms zurückgegeben
+-- FÜHRE ALLES IN 'SQL 14*' AUS
+--
+-- In Zeile 1:
+INSERT INTO Zeitschriften ("Titel", "ISBN", "Verlag", "Preis", "Erscheinungsdatum") VALUES
+    ('Katzen und Käse', '978-668028909', 'Felliger Verlag', 9.99, '2025-06-18'),
+    ('Fitness für Faule', '978-455854109', 'Sofa Sports GmbH', 9.99, '2025-07-05'),
+    ('Büro-Gelassenheit', '978-279048709', 'Zen Office Publishing', 8.75, '2024-12-12'),
+    ('Garten der Unordnung', '978-543814709', 'Wilde Blüte Medien', 9.99, '2025-04-19'),
+    ('Schnapsidee', '978-659965409', 'Promille Presse', 7.50, '2025-11-13'),
+    ('Schlaf und Genuss', '978-430233409', 'Traumland Verlag', 9.99, '2025-05-17'),
+    ('Essen oder nicht Essen', '978-475766609', 'Gourmet Grübel GmbH', 9.99, '2025-01-04'),
+    ('Fische im Büro', '978-410801809', 'Aquarium Arbeitswelt AG', 9.75, '2025-08-08'),
+    ('Das Leben ist ein Spiel', '978-522359509', 'Würfel Weisheiten Verlag', 9.99, '2024-12-17'),
+    ('Technik für Dummies', '978-726949609', 'Nerd Nirvana Publishing', 9.99, '2025-08-25');
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 0 ms , 10 Zeilen betroffen
+-- FÜHRE ALLES IN 'SQL 15*' AUS
+--
+-- In Zeile 1:
+SELECT * FROM Zeitschriften ORDER by ASC
+-- Ergebnis: no such column: ASC
+-- FÜHRE ALLES IN 'SQL 15*' AUS
+--
+-- In Zeile 1:
+SELECT * FROM Zeitschriften ORDER BY
+-- Ergebnis: incomplete input
+-- FÜHRE ALLES IN 'SQL 15*' AUS
+--
+-- In Zeile 1:
+SELECT Titel, Preis, Verlag, Erscheinungsdatum FROM Zeitschriften ORDER by	Erscheinungsdatum DESC
+-- Ergebnis: 20 Zeilen in 29 ms zurückgegeben
+-- FÜHRE ALLES IN 'SQL 15*' AUS
+--
+-- In Zeile 1:
+SELECT Titel, Preis, Verlag, Erscheinungsdatum FROM Zeitschriften ORDER by	Titel ASC, Erscheinungsdatum ASC
+-- Ergebnis: 20 Zeilen in 16 ms zurückgegeben
+-- FÜHRE ALLES IN 'SQL 15*' AUS
+--
+-- In Zeile 1:
+SELECT Titel, ISBN, 
+	CASE WHEN Preis>=7 THEN "ZU TEUER"
+		WHEN Preis<7 THEN "GIB MIR"
+		END
+FROM Zeitschriften
+-- Ergebnis: 20 Zeilen in 26 ms zurückgegeben
+-- FÜHRE ALLES IN 'SQL 15*' AUS
+--
+-- In Zeile 1:
+SELECT Titel, ISBN, 
+	CASE WHEN Preis>=7 THEN "ZU TEUER"
+		WHEN Preis<7 THEN "GIB MIR"
+		END AS Berechnung
+FROM Zeitschriften
+-- Ergebnis: 20 Zeilen in 17 ms zurückgegeben
+-- FÜHRE ALLES IN 'SQL 15*' AUS
+--
+-- In Zeile 1:
+SELECT Titel, ISBN, 
+	CASE WHEN Preis>=7 THEN "ZU TEUER"
+		WHEN Preis<7 THEN "GIB MIR"
+		END AS Auswertung
+FROM Zeitschriften
+-- Ergebnis: 20 Zeilen in 20 ms zurückgegeben
+-- FÜHRE ALLES IN 'SQL 15*' AUS
+--
+-- In Zeile 1:
+SELECT Titel, ISBN, 
+	CASE WHEN Preis>=7 THEN "ZU TEUER"
+		WHEN Preis<7 THEN "GIB MIR"
+		END AS Auswertung
+FROM Zeitschriften
+WHERE Titel like "%s"
+-- Ergebnis: 3 Zeilen in 16 ms zurückgegeben
+-- FÜHRE ALLES IN 'SQL 15*' AUS
+--
+-- In Zeile 1:
+SELECT Titel, ISBN, 
+	CASE WHEN Preis>=7 THEN "ZU TEUER"
+		WHEN Preis<7 THEN "GIB MIR"
+		END AS Auswertung
+FROM Zeitschriften
+WHERE Titel like "s%"
+-- Ergebnis: 5 Zeilen in 20 ms zurückgegeben
+-- FÜHRE ALLES IN 'SQL 15*' AUS
+--
+-- In Zeile 1:
+UPDATE Zeitschriften SET Preis = Preis*0.9 WHERE Verlag = "Promille Presse"
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 0 ms , 1 Zeilen betroffen
+-- FÜHRE ALLES IN 'SQL 15*' AUS
+--
+-- In Zeile 1:
+UPDATE Zeitschriften SET Preis = Preis*2.9 WHERE Verlag = "Promille Presse"
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 0 ms , 1 Zeilen betroffen
+-- FÜHRE ALLES IN 'SQL 15*' AUS
+--
+-- In Zeile 1:
+UPDATE Zeitschriften SET Preis =round (Preis*2.9, 2) WHERE Verlag = "Promille Presse"
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 0 ms , 1 Zeilen betroffen
+-- FÜHRE ALLES IN 'SQL 15*' AUS
+--
+-- In Zeile 1:
+UPDATE Zeitschriften SET Preis =round (Preis*2.9, 2) WHERE Verlag = "Promille Presse"
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 0 ms , 1 Zeilen betroffen
+-- FÜHRE ALLES IN 'SQL 15*' AUS
+--
+-- In Zeile 1:
+UPDATE Zeitschriften SET Preis = 10
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 2 ms , 20 Zeilen betroffen
+-- FÜHRE ALLES IN 'SQL 15*' AUS
+--
+-- In Zeile 1:
+UPDATE Zeitschriften SET Preis = 10 WHERE Preis=0
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 1 ms , 1 Zeilen betroffen
+-- FÜHRE ALLES IN 'SQL 15*' AUS
+--
+-- In Zeile 1:
+UPDATE Zeitschriften SET Preis = Preis/3 WHERE Verlag = "Promille Presse"
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 0 ms , 1 Zeilen betroffen
+-- FÜHRE ALLES IN 'SQL 15*' AUS
+--
+-- In Zeile 1:
+UPDATE Zeitschriften SET Preis = round(Preis/3, 2) WHERE Verlag = "Promille Presse"
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 3 ms , 1 Zeilen betroffen
+-- FÜHRE ALLES IN 'SQL 15*' AUS
+--
+-- In Zeile 1:
+UPDATE Zeitschriften SET Preis = round(Preis/3, 2) WHERE Verlag = "Promille Presse"
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 0 ms , 1 Zeilen betroffen
+-- FÜHRE ALLES IN 'SQL 15*' AUS
+--
+-- In Zeile 1:
+UPDATE Zeitschriften SET Preis = round(Preis*0,3, 2) WHERE Verlag = "Promille Presse"
+-- Ergebnis: wrong number of arguments to function round()
+-- FÜHRE ALLES IN 'SQL 15*' AUS
+--
+-- In Zeile 1:
+UPDATE Zeitschriften SET Preis = round(Preis*0.3, 2) WHERE Verlag = "Promille Presse"
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 0 ms , 1 Zeilen betroffen
+-- FÜHRE ALLES IN 'SQL 15*' AUS
+--
+-- In Zeile 1:
+UPDATE Zeitschriften SET Preis = round(Preis*0.3, 2) WHERE Verlag = "Promille Presse"
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 1 ms , 1 Zeilen betroffen
+-- FÜHRE ALLES IN 'SQL 15*' AUS
+--
+-- In Zeile 1:
+UPDATE Zeitschriften SET Preis = round(Preis*0.3, 1) WHERE Verlag = "Promille Presse"
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 4 ms , 1 Zeilen betroffen
+-- FÜHRE ALLES IN 'SQL 15*' AUS
+--
+-- In Zeile 1:
+UPDATE Zeitschriften SET Preis = round(Preis*0.3, 4) WHERE Verlag = "Promille Presse"
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 1 ms , 1 Zeilen betroffen
+-- FÜHRE ALLES IN 'SQL 15*' AUS
+--
+-- In Zeile 1:
+UPDATE Zeitschriften SET Preis = round(Preis*0.3, 0) WHERE Verlag = "Promille Presse"
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 2 ms , 1 Zeilen betroffen
+-- FÜHRE ALLES IN 'SQL 15*' AUS
+--
+-- In Zeile 1:
+UPDATE Zeitschriften SET Preis = round(Preis*0.3, 12) WHERE Verlag = "Promille Presse"
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 2 ms , 1 Zeilen betroffen
+-- FÜHRE ALLES IN 'SQL 15*' AUS
+--
+-- In Zeile 1:
+UPDATE Zeitschriften SET Preis = round(Preis*0.3, 2) WHERE Verlag = "Promille Presse"
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 1 ms , 1 Zeilen betroffen
+-- FÜHRE ALLES IN 'SQL 16*' AUS
+--
+-- In Zeile 1:
+DELETE FROM Zeitschriften WHERE Verlag = "Promille Presse"
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 0 ms , 1 Zeilen betroffen
+-- FÜHRE ALLES IN 'SQL 15*' AUS
+--
+-- In Zeile 1:
+UPDATE Zeitschriften SET Preis = round(Preis*0.3, 2) WHERE Verlag = "Promille Presse"
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 0 ms , 1 Zeilen betroffen
+-- FÜHRE ALLES IN 'SQL 16*' AUS
+--
+-- In Zeile 1:
+ALTER TABLE Zeitschriften ALTER
+-- Ergebnis: near "ALTER": syntax error
+-- FÜHRE ALLES IN 'SQL 1*' AUS
+--
+-- In Zeile 1:
+CREATE TABLE patienten (
+"PatientenIN" INT PRIMARY KEY NOT NULL,
+"Vorname" varchar(30) NOT NULL, 
+"Nachname" varchar(30) NOT NULL, 
+"Geburtstag" date NOT NULL, 
+"Geschlecht" char NOT NULL, 
+"Adresse" varchar(100) NOT NULL,
+"Telefon" varchar[],
+"Krankenkasse" varchar(30),
+
+)
+-- Ergebnis: near ")": syntax error
+-- FÜHRE ALLES IN 'SQL 1*' AUS
+--
+-- In Zeile 1:
+CREATE TABLE patienten (
+"PatientenIN" INT PRIMARY KEY NOT NULL,
+"Vorname" varchar(30) NOT NULL, 
+"Nachname" varchar(30) NOT NULL, 
+"Geburtstag" date NOT NULL, 
+"Geschlecht" char NOT NULL, 
+"Adresse" varchar(100) NOT NULL,
+"Telefon" varchar[],
+"Krankenkasse" varchar(30)
+
+);
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 1 ms 
+-- In Zeile 13:
+INSERT INTO patienten 
+("PatientenID", "Vorname", "Nachname", "Geburtstag", "Geschlecht", "Adresse", "Telefon", "Krankenkasse")
+VALUES
+(1, 'Hans', 'Wurst', '1980-05-12', 'M', 'Bratwurststr. 5, 12345 Grillstadt', '01234567890', 'BBQ Plus'),
+(2, 'Anna', 'Nass', '1992-11-30', 'W', 'Regenweg 12, 54321 Nasshausen', '09876543210', 'TropfCare'),
+(3, 'Peter', 'Silie', '1985-03-17', 'M', 'Kräuterplatz 3, 67890 Gartenstadt', '01712345678', 'GrünKost'),
+(4, 'Rosa', 'Schlüpfer', '1978-08-08', 'W', 'Modeweg 6, 98765 Dessoushausen', '01514785236', 'TextilVersicherer'),
+(5, 'Klara', 'Fall', '2000-01-01', 'W', 'Bergstraße 1, 11223 Abhangdorf', '01482365974', 'BergAb'),
+(6, 'Egon', 'Spielt', '1995-07-07', 'M', 'Casinoallee 77, 66554 Glücksspielhausen', '01534629751', 'JackpotCare'),
+(7, 'Franz', 'Ose', '1970-02-14', 'M', 'Romantikstraße 10, 43210 Herzstadt', '01614253698', 'LiebeCare'),
+(8, 'Lila', 'Pause', '1988-12-25', 'W', 'Schokoladenweg 8, 65432 Snackhausen', '01785236491', 'SüßVersichert'),
+(9, 'Max', 'Mustermann', '1983-04-01', 'M', 'Testweg 1, 11111 Musterstadt', '01801234567', 'StandardCare'),
+(10, 'Ida', 'Lustig', '1999-09-09', 'W', 'Humorweg 7, 33333 Lachhausen', '01987654321', 'FunHealth'),
+(11, 'Rainer', 'Zufall', '1977-07-07', 'M', 'Schicksalsweg 10, 44444 Glückshausen', '01235678901', 'ChancePlus'),
+(12, 'Mia', 'Maus', '1993-03-03', 'W', 'Käseweg 2, 55555 Tierhausen', '01795647892', 'AnimalCare'),
+(13, 'Fritz', 'Kola', '1981-06-15', 'M', 'Getränkestr. 99, 66666 Sprudelstadt', '01475839265', 'FrischePlus'),
+(14, 'Lisa', 'Bohne', '1990-11-11', 'W', 'Kaffeering 4, 77777 Wachhausen', '01574829563', 'EnergyCare'),
+(15, 'Bernd', 'Dasbrot', '1969-12-24', 'M', 'Teigstraße 6, 88888 Backstadt', '01652384719', 'BäckereiVersicherer'),
+(16, 'Conny', 'Reh', '2002-05-05', 'W', 'Waldweg 13, 99999 Tierwelt', '01239485761', 'WildlifePlus'),
+(17, 'Susi', 'Sorglos', '1987-08-18', 'W', 'Entspannungsallee 20, 10101 Relaxstadt', '01745923684', 'ChillCare'),
+(18, 'Karl', 'Laut', '1975-02-20', 'M', 'Stimmweg 9, 20202 Hörstadt', '01576328941', 'EchoPlus'),
+(19, 'Elisa', 'Dampf', '1996-10-10', 'W', 'Zugstraße 15, 30303 Lokstadt', '01495832674', 'SteamCare'),
+(20, 'Theo', 'Retisch', '1984-01-01', 'M', 'Andeutungsweg 8, 40404 Geheimstadt', '01823947561', 'MysteryCare');
+-- Ergebnis: table patienten has no column named PatientenID
+-- FÜHRE ALLES IN 'SQL 1*' AUS
+--
+-- In Zeile 1:
+-- Erstellen der Tabelle patienten
+CREATE TABLE patienten (
+-- Ergebnis: table patienten already exists
+-- FÜHRE ALLES IN 'SQL 1*' AUS
+--
+-- In Zeile 1:
+CREATE TABLE patienten (
+-- Ergebnis: table patienten already exists
+-- FÜHRE ALLES IN 'SQL 1*' AUS
+--
+-- In Zeile 1:
+CREATE TABLE patienten (
+    "PatientenID" INT PRIMARY KEY NOT NULL,
+    "Vorname" VARCHAR(30) NOT NULL, 
+    "Nachname" VARCHAR(30) NOT NULL, 
+    "Geburtstag" DATE NOT NULL, 
+    "Geschlecht" CHAR(1) NOT NULL, 
+    "Adresse" VARCHAR(100) NOT NULL,
+    "Telefon" VARCHAR(15) NOT NULL,
+    "Krankenkasse" VARCHAR(30) NOT NULL
+);
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 2 ms 
+-- In Zeile 12:
+INSERT INTO patienten 
+("PatientenID", "Vorname", "Nachname", "Geburtstag", "Geschlecht", "Adresse", "Telefon", "Krankenkasse") 
+VALUES
+(1, 'Hans', 'Wurst', '1980-05-12', 'M', 'Bratwurststr. 5, 12345 Grillstadt', '01234567890', 'BBQ Plus'),
+(2, 'Anna', 'Nass', '1992-11-30', 'W', 'Regenweg 12, 54321 Nasshausen', '09876543210', 'TropfCare'),
+(3, 'Peter', 'Silie', '1985-03-17', 'M', 'Kräuterplatz 3, 67890 Gartenstadt', '01712345678', 'GrünKost'),
+(4, 'Rosa', 'Schlüpfer', '1978-08-08', 'W', 'Modeweg 6, 98765 Dessoushausen', '01514785236', 'TextilVersicherer'),
+(5, 'Klara', 'Fall', '2000-01-01', 'W', 'Bergstraße 1, 11223 Abhangdorf', '01482365974', 'BergAb'),
+(6, 'Egon', 'Spielt', '1995-07-07', 'M', 'Casinoallee 77, 66554 Glücksspielhausen', '01534629751', 'JackpotCare'),
+(7, 'Franz', 'Ose', '1970-02-14', 'M', 'Romantikstraße 10, 43210 Herzstadt', '01614253698', 'LiebeCare'),
+(8, 'Lila', 'Pause', '1988-12-25', 'W', 'Schokoladenweg 8, 65432 Snackhausen', '01785236491', 'SüßVersichert'),
+(9, 'Max', 'Mustermann', '1983-04-01', 'M', 'Testweg 1, 11111 Musterstadt', '01801234567', 'StandardCare'),
+(10, 'Ida', 'Lustig', '1999-09-09', 'W', 'Humorweg 7, 33333 Lachhausen', '01987654321', 'FunHealth'),
+(11, 'Rainer', 'Zufall', '1977-07-07', 'M', 'Schicksalsweg 10, 44444 Glückshausen', '01235678901', 'ChancePlus'),
+(12, 'Mia', 'Maus', '1993-03-03', 'W', 'Käseweg 2, 55555 Tierhausen', '01795647892', 'AnimalCare'),
+(13, 'Fritz', 'Kola', '1981-06-15', 'M', 'Getränkestr. 99, 66666 Sprudelstadt', '01475839265', 'FrischePlus'),
+(14, 'Lisa', 'Bohne', '1990-11-11', 'W', 'Kaffeering 4, 77777 Wachhausen', '01574829563', 'EnergyCare'),
+(15, 'Bernd', 'Dasbrot', '1969-12-24', 'M', 'Teigstraße 6, 88888 Backstadt', '01652384719', 'BäckereiVersicherer'),
+(16, 'Conny', 'Reh', '2002-05-05', 'W', 'Waldweg 13, 99999 Tierwelt', '01239485761', 'WildlifePlus'),
+(17, 'Susi', 'Sorglos', '1987-08-18', 'W', 'Entspannungsallee 20, 10101 Relaxstadt', '01745923684', 'ChillCare'),
+(18, 'Karl', 'Laut', '1975-02-20', 'M', 'Stimmweg 9, 20202 Hörstadt', '01576328941', 'EchoPlus'),
+(19, 'Elisa', 'Dampf', '1996-10-10', 'W', 'Zugstraße 15, 30303 Lokstadt', '01495832674', 'SteamCare'),
+(20, 'Theo', 'Retisch', '1984-01-01', 'M', 'Andeutungsweg 8, 40404 Geheimstadt', '01823947561', 'MysteryCare');
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 0 ms , 20 Zeilen betroffen
+-- FÜHRE ALLES IN 'SQL 3*' AUS
+--
+-- In Zeile 1:
+CREATE TABLE stationen (
+    "StationsID" INT PRIMARY KEY NOT NULL,
+    "StationsName" VARCHAR(40) NOT NULL,
+    "Fachgebiet" VARCHAR(40) NOT NULL
+);
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 0 ms 
+-- In Zeile 7:
+INSERT INTO stationen 
+("StationsID", "StationsName", "Fachgebiet")
+VALUES
+(1, 'Herzschmerzstation', 'Kardiologie'),
+(2, 'Käsefüße', 'Podologie'),
+(3, 'Bauchgefühl', 'Gastroenterologie'),
+(4, 'Schnarchpalast', 'Schlafmedizin'),
+(5, 'Kopfchaos', 'Psychiatrie'),
+(6, 'Hüftgold', 'Orthopädie'),
+(7, 'Pillenparty', 'Pharmakologie'),
+(8, 'Scherbenhaufen', 'Traumatologie'),
+(9, 'Grünzeugfanclub', 'Ernährungsmedizin'),
+(10, 'Plappermäuler', 'Logopädie');
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 0 ms , 10 Zeilen betroffen
+-- FÜHRE ALLES IN 'SQL 2*' AUS
+--
+-- In Zeile 1:
+CREATE TABLE aerzte (
+    "PersonalID" INT PRIMARY KEY NOT NULL,
+    "Vorname" VARCHAR(30) NOT NULL,
+    "Nachname" VARCHAR(30) NOT NULL,
+    "Fachgebiet" VARCHAR(30) NOT NULL,
+    "StationsID" INT NOT NULL,
+    "Telefon" VARCHAR(30)
+);
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 0 ms 
+-- In Zeile 10:
+INSERT INTO aerzte 
+("PersonalID", "Vorname", "Nachname", "Fachgebiet", "StationsID", "Telefon")
+VALUES
+(1, 'Max', 'Aderlass', 'Kardiologie', 1, '01234567890'),
+(2, 'Otto', 'Klation', 'Pharmakologie', 7, '09876543210'),
+(3, 'Edda', 'Spalter', 'Traumatologie', 8, '01712345678'),
+(4, 'Lars', 'Knacken', 'Orthopädie', 6, '01514785236'),
+(5, 'Frieda', 'Schnur', 'Logopädie', 10, '01482365974'),
+(6, 'Theo', 'Rapie', 'Psychiatrie', 5, '01534629751'),
+(7, 'Ina', 'Diät', 'Ernährungsmedizin', 9, '01614253698'),
+(8, 'Kurt', 'Ison', 'Schlafmedizin', 4, '01785236491'),
+(9, 'Sara', 'Peutisch', 'Gastroenterologie', 3, '01495832674'),
+(10, 'Ella', 'Gie', 'Radiologie', 2, '01823947561');
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 0 ms , 10 Zeilen betroffen
+-- FÜHRE ALLES IN 'SQL 4*' AUS
+--
+-- In Zeile 1:
+CREATE TABLE behandlungen ( 
+    "BehandlungsID" INT PRIMARY KEY NOT NULL,
+    "ArztID" INT NOT NULL,
+    "PatientenID" INT NOT NULL,
+    "Diagnose" VARCHAR(500) NOT NULL,
+    "Datum" DATE NOT NULL,
+    FOREIGN KEY (ArztID) REFERENCES aerzte(PersonalID),
+    FOREIGN KEY (PatientenID) REFERENCES patienten(PatientenID)
+);
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 1 ms 
+-- In Zeile 11:
+INSERT INTO behandlungen 
+("BehandlungsID", "ArztID", "PatientenID", "Diagnose", "Datum")
+VALUES
+(1, 1, 2, 'Akute Lachmuskelzerrung nach übermäßigem Witzkonsum', '2024-11-01'),
+(2, 3, 1, 'Chronischer Kaffeekick durch Überdosis Espresso', '2024-11-02'),
+(3, 4, 5, 'Plötzlicher Lachanfall mit Seitenstechen', '2024-11-03'),
+(4, 6, 3, 'Hyperaktive Zuckermüdigkeit nach Kuchenorgie', '2024-11-04'),
+(5, 2, 4, 'Verdacht auf Grinse-Virus bei Dauerschmunzeln', '2024-11-05'),
+(6, 7, 6, 'Orthopädischer Stuhlgang durch Sitzmarathon', '2024-11-06'),
+(7, 8, 7, 'Kopfkino mit Realitätsverlust nach Filmabend', '2024-11-07'),
+(8, 5, 8, 'Heiserkeit nach Karaoke-Marathon', '2024-11-08'),
+(9, 9, 9, 'Verstimmte Bauchgefühle nach schiefem Geburtstagsständchen', '2024-11-09'),
+(10, 10, 10, 'Hypersensibilität auf schlechte Wortspiele', '2024-11-10'),
+(11, 1, 11, 'Krämpfe im Lachzentrum durch Comedy-Overload', '2024-11-11'),
+(12, 2, 12, 'Fahrstuhlphobie nach stecken gebliebenem Aufzug', '2024-11-12'),
+(13, 3, 13, 'Unterzuckerung durch Mangel an Süßigkeiten', '2024-11-13'),
+(14, 4, 14, 'Klimaanlagen-Kollaps nach Dauerlüftung', '2024-11-14'),
+(15, 5, 15, 'Hustenanfall nach Pfeffer-Überdosis', '2024-11-15'),
+(16, 6, 16, 'Muskelkater nach 24-Stunden-Umzugs-Workout', '2024-11-16'),
+(17, 7, 17, 'Schreibkrämpfe nach ausgedehnter WhatsApp-Session', '2024-11-17'),
+(18, 8, 18, 'Hyperaktivität nach übermäßiger Schokoladenaufnahme', '2024-11-18'),
+(19, 9, 19, 'Schlafstörung durch Serien-Binge-Watching', '2024-11-19'),
+(20, 10, 20, 'Tinnitus nach Dauerbeschallung mit Popmusik', '2024-11-20');
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 0 ms , 20 Zeilen betroffen
+-- FÜHRE ALLES IN 'SQL 5*' AUS
+--
+-- In Zeile 1:
+CREATE TABLE medikamente (
+    "MedikamentenID" INT PRIMARY KEY NOT NULL,
+    "Produktname" VARCHAR(50) NOT NULL,
+    "Dosis" VARCHAR(20) NOT NULL,
+    "Nebenwirkungen" VARCHAR(200),
+    "Rezeptpflichtig" BOOLEAN NOT NULL
+);
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 0 ms 
+-- In Zeile 9:
+INSERT INTO medikamente 
+("MedikamentenID", "Produktname", "Dosis", "Nebenwirkungen", "Rezeptpflichtig")
+VALUES
+(1, 'Lachperidol', '2x täglich', 'Dauerhaftes Grinsen, Muskelkater im Gesicht', 1),
+(2, 'Grummelgin', '1x morgens', 'Akute Launenhaftigkeit, spontane Meckereien', 0),
+(3, 'Schnarchosin', 'Vor dem Schlafengehen', 'Lautes Schnarchen, Schlafwandeln', 1),
+(4, 'Besserwisserin', 'Nach Bedarf', 'Unaufhaltsamer Redefluss, besserwisserische Haltung', 0),
+(5, 'Muffelimin', '3 Tropfen täglich', 'Übermäßige Freundlichkeit, spontane Umarmungen', 1),
+(6, 'Wortspielon', 'Bei Witzenot', 'Heißhunger auf schlechte Witze, Lachflash', 0),
+(7, 'Chillerol', '1 Tablette abends', 'Extreme Entspannung, Verlust des Zeitgefühls', 0),
+(8, 'Motivierax', '1x morgens', 'Hyperaktivität, spontanes Aufräumen', 1),
+(9, 'Stressoderm', '2x täglich', 'Vergesslichkeit, plötzlicher Optimismus', 1),
+(10, 'Hyperaktivix', 'Nur bei akuten Fällen', 'Unruhe, übermäßige Energie', 0),
+(11, 'Planlosin', '2x täglich', 'Spontanität, leichte Orientierungslosigkeit', 0),
+(12, 'Nixklappenol', 'Nach Bedarf', 'Kurze Aussetzer, Planungsprobleme', 1),
+(13, 'Ideenflutin', '1 Tropfen täglich', 'Überflutung mit neuen Ideen, Schlaflosigkeit', 1),
+(14, 'Serienmarathonol', 'Nur abends', 'Langes Sitzen, akute Müdigkeit am Morgen', 0),
+(15, 'Lustikusin', 'Nach Bedarf', 'Spontane Lachanfälle, Kitzligkeit', 0),
+(16, 'Fresskapantol', '1x vor dem Essen', 'Heißhunger, Magenknurren', 0),
+(17, 'Koffeinol', 'Nach Bedarf', 'Zittern, Konzentrationsschwäche', 1),
+(18, 'Socializin', 'Vor Treffen einnehmen', 'Redseligkeit, übermäßige Nähe', 0),
+(19, 'Faulinax', 'Nur im Notfall', 'Energieverlust, starke Couch-Anziehung', 0),
+(20, 'Prokrastinix', 'Nach Bedarf', 'Aufschieberitis, spontane Müdigkeit', 0);
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 0 ms , 20 Zeilen betroffen
+-- FÜHRE ALLES IN 'SQL 6*' AUS
+--
+-- In Zeile 1:
+CREATE TABLE verschreibungen (
+    "VerschreibungsID" INT PRIMARY KEY NOT NULL,
+    "PatientID" INT NOT NULL,
+    "ArztID" INT NOT NULL,
+    "MedikamentenID" INT NOT NULL,
+    "Startdatum" DATE NOT NULL,
+    "Enddatum" DATE NOT NULL,
+    FOREIGN KEY (PatientID) REFERENCES patienten(PatientenID),
+    FOREIGN KEY (ArztID) REFERENCES aerzte(PersonalID),
+    FOREIGN KEY (MedikamentenID) REFERENCES medikamente(MedikamentenID)
+);
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 0 ms 
+-- In Zeile 13:
+INSERT INTO verschreibungen 
+("VerschreibungsID", "PatientID", "ArztID", "MedikamentenID", "Startdatum", "Enddatum")
+VALUES
+(1, 3, 1, 1, '2024-11-01', '2024-11-10'), -- Lachperidol: "Zehntägige Therapie gegen Humorüberlastung"
+(2, 5, 2, 2, '2024-11-02', '2024-11-12'), -- Grummelgin: "Launenjustierung bei chronischer Zufriedenheit"
+(3, 7, 3, 3, '2024-11-03', '2024-11-13'), -- Schnarchosin: "Schlafhilfe für Partner geschädigter Schnarcher"
+(4, 9, 4, 4, '2024-11-04', '2024-11-14'), -- Besserwisserin: "Selbstüberschätzungskur"
+(5, 11, 5, 5, '2024-11-05', '2024-11-15'), -- Muffelimin: "Frühstückserweiterung für Morgenmuffel"
+(6, 12, 6, 6, '2024-11-06', '2024-11-16'), -- Wortspielon: "Witzige Unterstützung bei schlechter Laune"
+(7, 13, 7, 7, '2024-11-07', '2024-11-17'), -- Chillerol: "Für spontane Entspannungsanfälle"
+(8, 14, 8, 8, '2024-11-08', '2024-11-18'), -- Motivierax: "Energieschub für Putzteufel"
+(9, 15, 9, 9, '2024-11-09', '2024-11-19'), -- Stressoderm: "Entspannung für überarbeitete Workaholics"
+(10, 16, 10, 10, '2024-11-10', '2024-11-20'), -- Hyperaktivix: "Für sportliche Übertreibungen"
+(11, 17, 1, 11, '2024-11-11', '2024-11-21'), -- Planlosin: "Spontanitätsförderung bei Planungsneurotikern"
+(12, 18, 2, 12, '2024-11-12', '2024-11-22'), -- Nixklappenol: "Für ein freies Wochenende ohne Projekte"
+(13, 19, 3, 13, '2024-11-13', '2024-11-23'), -- Ideenflutin: "Kur gegen Ideenblockaden"
+(14, 20, 4, 14, '2024-11-14', '2024-11-24'), -- Serienmarathonol: "Konditionstraining für Serienfans"
+(15, 1, 5, 15, '2024-11-15', '2024-11-25'), -- Lustikusin: "Humoraufheller für graue Tage"
+(16, 2, 6, 16, '2024-11-16', '2024-11-26'), -- Fresskapantol: "Appetitanreger für Kochmuffel"
+(17, 3, 7, 17, '2024-11-17', '2024-11-27'), -- Koffeinol: "Energiehilfe für Nachteulen"
+(18, 4, 8, 18, '2024-11-18', '2024-11-28'), -- Socializin: "Für schüchterne Smalltalk-Verweigerer"
+(19, 5, 9, 19, '2024-11-19', '2024-11-29'), -- Faulinax: "Unterstützung für stressige Ausruhphasen"
+(20, 6, 10, 20, '2024-11-20', '2024-11-30');
+-- Ergebnis: Abfrage erfolgreich ausgeführt. Benötigte 0 ms , 20 Zeilen betroffen

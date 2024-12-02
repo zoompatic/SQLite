@@ -108,27 +108,41 @@ INSERT INTO dienstleistungen (DienstleistungsID, DienstleistungsName, Preis) VAL
 (7019, 'Marathontraining im Treppenhaus', 5),
 (7020, 'Bubble-Wrap-Therapie (Ploppen für die Seele)', 10);
 
-INSERT INTO zahlungen (ZahlungsID, ZahlungsArt, ZahlungsDatum) VALUES
-(8000, 'Kreditkarte', '2024-12-01'),
-(8001, 'Bargeld', '2024-12-02'),
-(8002, 'Paypal', '2024-12-03'),
-(8003, 'Überweisung', '2024-12-04'),
-(8004, 'Sofortüberweisung', '2024-12-05'),
-(8005, 'Kreditkarte', '2024-12-06'),
-(8006, 'Rechnung', '2024-12-07'),
-(8007, 'Lastschrift', '2024-12-08'),
-(8008, 'Klarna', '2024-12-09'),
-(8009, 'Bargeld', '2024-12-10'),
-(8010, 'PayPal', '2024-12-11'),
-(8011, 'Überweisung', '2024-12-12'),
-(8012, 'Kreditkarte', '2024-12-13'),
-(8013, 'Apple Pay', '2024-12-14'),
-(8014, 'Google Pay', '2024-12-15'),
-(8015, 'Rechnung', '2024-12-16'),
-(8016, 'Lastschrift', '2024-12-17'),
-(8017, 'Klarna', '2024-12-18'),
-(8018, 'PayPal', '2024-12-19'),
-(8019, 'Sofortüberweisung', '2024-12-20');
+INSERT INTO zahlungen (ZahlungsID, RechnungsID, ZahlungsArt, ZahlungsDatum) VALUES
+(8000, 1, 'Kreditkarte von Oma', '2024-12-05 10:30:00'),
+(8001, 2, 'Bar in Schokoladenmünzen', '2024-12-07 14:00:00'),
+(8002, 3, 'Bitcoin (aus der Zukunft)', '2024-12-08 09:15:00'),
+(8003, 4, 'Kuckucksuhr-Zahlung', '2024-12-09 16:45:00'),
+(8004, 5, 'Super Mario Coins', '2024-12-10 11:30:00'),
+(8005, 6, 'Bezahlung per Luftpost-Brief', '2024-12-11 13:00:00'),
+(8006, 7, 'Zahlung durch Streicheleinheiten', '2024-12-12 15:30:00'),
+(8007, 8, 'Koffeinbasierte Zahlung (Kaffee)', '2024-12-13 17:00:00'),
+(8008, 9, 'Ein Ticket in den Freizeitpark', '2024-12-14 08:00:00'),
+(8009, 10, 'Bezahlung mit einem Keks', '2024-12-15 10:45:00');
 
 
+INSERT INTO reservierungen (ReservierungsID, GästeAnz, CheckIn, CheckOut) VALUES
+(1, 2, '2024-12-01 14:00:00', '2024-12-05 11:00:00'),
+(2, 1, '2024-12-03 16:00:00', '2024-12-07 12:00:00'),
+(3, 4, '2024-12-04 15:00:00', '2024-12-08 10:00:00'),
+(4, 3, '2024-12-05 13:00:00', '2024-12-09 12:00:00'),
+(5, 5, '2024-12-06 14:00:00', '2024-12-10 11:00:00'),
+(6, 2, '2024-12-07 15:00:00', '2024-12-11 12:00:00'),
+(7, 6, '2024-12-08 16:00:00', '2024-12-12 13:00:00'),
+(8, 1, '2024-12-09 14:00:00', '2024-12-13 11:00:00'),
+(9, 3, '2024-12-10 15:00:00', '2024-12-14 12:00:00'),
+(10, 4, '2024-12-11 16:00:00', '2024-12-15 10:00:00');
+
+
+INSERT INTO belegungen (BelegungsID, ReservierungsID, ZimmerID, Verfügbar) VALUES
+(1, 1, 3000, TRUE),
+(2, 1, 3001, FALSE),
+(3, 2, 3002, TRUE),
+(4, 2, 3003, FALSE),
+(5, 3, 3004, TRUE),
+(6, 3, 3005, TRUE),
+(7, 4, 3006, FALSE),
+(8, 4, 3007, TRUE),
+(9, 5, 3008, FALSE),
+(10, 5, 3009, TRUE);
 
